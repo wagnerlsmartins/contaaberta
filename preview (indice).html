@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Base de conhecimento para coletivos | Conta Aberta</title>
+  <meta
+    name="description"
+    content="Guias práticos para coletivos organizarem caixa, prestação de contas, arrecadação e crescimento com mais clareza."
+  />
+  <meta
+    name="keywords"
+    content="base de conhecimento para coletivos, organizar caixa de coletivo, arrecadação para comunidades, open finance para coletivos, prestação de contas para apoiadores"
+  />
+  <link rel="canonical" href="https://contaaberta.info/sucesso/" />
+  <meta property="og:title" content="Base de conhecimento para coletivos | Conta Aberta" />
+  <meta
+    property="og:description"
+    content="Uma base de conhecimento viva para admins, tesoureiros e lideranças de coletivos que querem organizar o financeiro e crescer."
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://contaaberta.info/sucesso/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Base de conhecimento para coletivos",
+    "url": "https://contaaberta.info/sucesso/",
+    "description": "Conteúdos da Conta Aberta para coletivos organizarem caixa, transparência e arrecadação.",
+    "inLanguage": "pt-BR"
+  }
+  </script>
+
+  <style>
+    :root {
+      --blue: #245fae;
+      --blue-dark: #0b2b57;
+      --blue-soft: #edf4fb;
+      --blue-line: #d7e3f1;
+      --text: #1e2430;
+      --muted: #5f6f85;
+      --card: #ffffff;
+      --yellow: #f8c640;
+      --teal: #5fd0c2;
+      --shadow: 0 20px 48px rgba(36, 95, 174, 0.12);
+      --radius: 24px;
+      --max: 1180px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: "Avenir Next", "Segoe UI", Helvetica, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top right, rgba(36, 95, 174, 0.08), transparent 24%),
+        linear-gradient(180deg, #f6fafe 0%, #edf4fb 100%);
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .wrap {
+      width: min(100% - 40px, var(--max));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(215, 227, 241, 0.9);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 92px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-weight: 900;
+      color: var(--blue);
+    }
+
+    .brand-wordmark {
+      display: inline-flex;
+      flex-direction: column;
+      font-size: 1.06rem;
+      line-height: 0.88;
+      text-transform: lowercase;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-wordmark span:last-child {
+      margin-top: 2px;
+    }
+
+    .brand svg {
+      width: 64px;
+      height: 64px;
+      flex: none;
+    }
+
+    .menu,
+    .actions {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .menu a,
+    .actions a {
+      font-weight: 600;
+      color: #314055;
+    }
+
+    .actions .primary-btn {
+      padding: 14px 24px;
+      border-radius: 16px;
+      background: var(--blue);
+      color: #fff;
+      box-shadow: 0 10px 24px rgba(36, 95, 174, 0.22);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 72px 0 56px;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 80px;
+      right: 4%;
+      width: 320px;
+      height: 220px;
+      background-image: radial-gradient(rgba(36, 95, 174, 0.55) 2px, transparent 2px);
+      background-size: 26px 26px;
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .hero-grid,
+    .cards,
+    .info-grid,
+    .future-grid,
+    .footer-grid {
+      display: grid;
+      gap: 22px;
+    }
+
+    .hero-grid {
+      grid-template-columns: minmax(0, 1.08fr) minmax(280px, 0.92fr);
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(95, 208, 194, 0.16);
+      color: var(--blue-dark);
+      font-size: 0.92rem;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+
+    h1 {
+      margin: 0 0 18px;
+      font-size: clamp(2.7rem, 6vw, 5.25rem);
+      line-height: 0.96;
+      letter-spacing: -0.05em;
+    }
+
+    .lead {
+      max-width: 720px;
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: 1.22rem;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 24px;
+      border-radius: 18px;
+      font-weight: 800;
+      border: 2px solid transparent;
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(36, 95, 174, 0.14);
+    }
+
+    .btn-primary {
+      background: var(--yellow);
+      color: #18212e;
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--blue);
+      border-color: var(--blue-line);
+    }
+
+    .hero-card,
+    .card,
+    .cta-card,
+    .format-card {
+      background: var(--card);
+      border: 1px solid var(--blue-line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card {
+      padding: 26px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto;
+      height: 120px;
+      background: linear-gradient(180deg, var(--blue) 0%, #2f6ec7 100%);
+    }
+
+    .hero-card-body {
+      position: relative;
+      margin-top: 76px;
+      padding: 22px 22px 8px;
+      border-radius: 22px;
+      background: #fff;
+      border: 1px solid rgba(215, 227, 241, 0.9);
+    }
+
+    .mini-list {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .mini-list li {
+      margin-bottom: 10px;
+    }
+
+    .section {
+      padding: 30px 0;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 22px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .section-copy {
+      max-width: 720px;
+      color: var(--muted);
+      font-size: 1.04rem;
+    }
+
+    .cards {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card {
+      padding: 26px;
+      height: 100%;
+    }
+
+    .card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: var(--blue);
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+
+    .card h3 {
+      margin: 0 0 12px;
+      font-size: 1.6rem;
+      line-height: 1.08;
+      letter-spacing: -0.03em;
+    }
+
+    .card p {
+      margin: 0 0 18px;
+      color: var(--muted);
+    }
+
+    .card-link {
+      color: var(--blue);
+      font-weight: 800;
+    }
+
+    .info-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .info-box {
+      padding: 24px;
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid rgba(215, 227, 241, 0.92);
+    }
+
+    .info-box strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.16rem;
+      color: var(--blue-dark);
+    }
+
+    .community {
+      padding: 10px 0 20px;
+    }
+
+    .cta-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 0.7fr);
+      gap: 24px;
+      padding: 30px;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at bottom right, rgba(248, 198, 64, 0.18), transparent 30%),
+        #ffffff;
+    }
+
+    .cta-card h3 {
+      margin: 0 0 14px;
+      font-size: 2rem;
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+    }
+
+    .cta-card p {
+      margin: 0 0 16px;
+      color: var(--muted);
+    }
+
+    .pill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .pill-list span {
+      display: inline-flex;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: var(--blue-dark);
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .future-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .format-card {
+      padding: 22px;
+    }
+
+    .format-card strong {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1.08rem;
+      color: var(--blue-dark);
+    }
+
+    .format-card p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .site-footer {
+      margin-top: 48px;
+      padding: 48px 0;
+      background: var(--blue-dark);
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .footer-grid {
+      grid-template-columns: minmax(260px, 1fr) repeat(2, minmax(180px, 0.7fr));
+      align-items: start;
+    }
+
+    .footer-grid h4 {
+      margin: 0 0 16px;
+      font-size: 1.4rem;
+    }
+
+    .footer-grid p,
+    .footer-grid a {
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 12px;
+    }
+
+    @media (max-width: 1080px) {
+      .menu {
+        display: none;
+      }
+
+      .hero-grid,
+      .cta-card,
+      .cards,
+      .info-grid,
+      .future-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .wrap {
+        width: min(100% - 24px, var(--max));
+      }
+
+      .nav {
+        min-height: 78px;
+      }
+
+      .actions {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 42px;
+      }
+
+      h1 {
+        font-size: clamp(2.35rem, 10vw, 4rem);
+      }
+
+      .hero-card {
+        padding: 20px;
+      }
+
+      .card,
+      .cta-card,
+      .format-card {
+        padding: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a class="brand" href="preview (indice).html" aria-label="Conta Aberta">
+        <svg viewBox="0 0 78 78" role="img" aria-hidden="true">
+          <defs>
+            <linearGradient id="logoGradientIndex" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#69d5ca"></stop>
+              <stop offset="100%" stop-color="#245fae"></stop>
+            </linearGradient>
+          </defs>
+          <circle cx="39" cy="39" r="33" fill="url(#logoGradientIndex)"></circle>
+          <path d="M39 12c12.7 0 23 10.3 23 23 0 6.2-2.5 11.9-6.5 16-1.8-8.1-8.4-14.2-16.5-14.2S24.3 42.9 22.5 51C18.5 46.9 16 41.2 16 35c0-12.7 10.3-23 23-23z" fill="#ffffff" opacity="0.9"></path>
+          <circle cx="39" cy="42" r="11.3" fill="#0b2b57"></circle>
+          <path d="M39 45l10.3 18H28.7z" fill="#f8c640"></path>
+        </svg>
+        <span class="brand-wordmark">
+          <span>conta</span>
+          <span>aberta</span>
+        </span>
+      </a>
+
+      <nav class="menu" aria-label="Principal">
+        <a href="preview (indice).html">Base de conhecimento</a>
+        <a href="/quem-somos">Quem Somos</a>
+        <a href="/projetos">Projetos</a>
+        <a href="/contato">Contato</a>
+      </nav>
+
+      <div class="actions">
+        <a href="/entrar">Entrar</a>
+        <a class="primary-btn" href="/cadastrar">Cadastrar</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">Conta Aberta • contaaberta.info/sucesso</span>
+          <h1>Base de conhecimento para coletivos que querem crescer com mais clareza</h1>
+          <p class="lead">
+            Este espaço reúne conteúdos práticos para quem administra grupos, comunidades e projetos coletivos.
+            Aqui você encontra materiais sobre caixa, prestação de contas, arrecadação, Open Finance,
+            rotinas de gestão e crescimento sustentável.
+          </p>
+
+          <div class="btn-row">
+            <a class="btn btn-primary" href="#artigos">Explorar artigos</a>
+            <a class="btn btn-secondary" href="/grupo">Entrar no grupo de estratégias</a>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <div class="hero-card-body">
+            <h2 style="font-size: 1.9rem; margin-bottom: 14px;">O que você vai encontrar aqui</h2>
+            <ol class="mini-list">
+              <li>Guias independentes, que funcionam bem sozinhos.</li>
+              <li>Dúvidas reais de admins e tesoureiros: banco digital, burocracia, segurança, visibilidade e apoio recorrente.</li>
+              <li>Materiais que ajudam a entender quando faz sentido usar a Conta Aberta e quando faz sentido aprender mais primeiro.</li>
+              <li>Espaço pronto para crescer com checklists, FAQs, estudos de caso, vídeos e modelos.</li>
+            </ol>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="artigos">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Artigos para começar pelo tema que mais dói hoje</h2>
+            <p class="section-copy">
+              Os conteúdos cobrem desde a separação do caixa até temas mais estratégicos, mas cada texto foi escrito para ser útil mesmo quando lido de forma isolada.
+            </p>
+          </div>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card-top">
+              <span class="tag">Conta e caixa</span>
+            </div>
+            <h3>Como separar o dinheiro do grupo da sua conta pessoal</h3>
+            <p>
+              O que fazer quando todo o caixa do projeto ainda passa pela conta de uma única pessoa, como abrir uma conta dedicada e o que realmente importa na hora de escolher um banco digital.
+            </p>
+            <a class="card-link" href="preview 3.html">Ler artigo</a>
+          </article>
+
+          <article class="card">
+            <div class="card-top">
+              <span class="tag">Gestão do caixa</span>
+            </div>
+            <h3>Como organizar o dinheiro de um coletivo</h3>
+            <p>
+              Rotina semanal, categorias mínimas, prestação de contas, papéis internos e um modelo simples para o grupo ganhar clareza sem virar refém de planilhas caóticas.
+            </p>
+            <a class="card-link" href="preview 1.html">Ler artigo</a>
+          </article>
+
+          <article class="card">
+            <div class="card-top">
+              <span class="tag">Arrecadação</span>
+            </div>
+            <h3>Como arrecadar dinheiro para um coletivo</h3>
+            <p>
+              Fontes de receita, apoio recorrente, campanhas pontuais, página de contribuição e o que preparar antes de pedir mais dinheiro para a comunidade.
+            </p>
+            <a class="card-link" href="preview 2.html">Ler artigo</a>
+          </article>
+
+          <article class="card">
+            <div class="card-top">
+              <span class="tag">Crescimento com transparência</span>
+            </div>
+            <h3>Como aumentar a arrecadação com transparência financeira</h3>
+            <p>
+              Como transformar visibilidade do caixa em retenção de apoiadores, confiança pública e mais margem para crescer, inclusive entendendo onde Open Finance entra nisso.
+            </p>
+            <a class="card-link" href="preview 4.html">Ler artigo</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Perguntas que aparecem o tempo todo entre admins e tesoureiros</h2>
+            <p class="section-copy">
+              Estes são alguns dos temas que esta base vai continuar cobrindo, inclusive em formatos curtos e materiais de apoio.
+            </p>
+          </div>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-box">
+            <strong>Banco digital serve?</strong>
+            Sim, muitas vezes serve muito bem. O importante é extrato claro, Pix funcionando, boa usabilidade e uma forma segura de centralizar o caixa.
+          </div>
+          <div class="info-box">
+            <strong>Precisa de CNPJ?</strong>
+            Depende do estágio do grupo. O tema aparece com detalhes no conteúdo sobre separar conta pessoal e dinheiro do coletivo.
+          </div>
+          <div class="info-box">
+            <strong>Open Finance é seguro?</strong>
+            É uma pergunta importante, e por isso ela aparece explicada sem hype: consentimento, autenticação, instituições participantes e cancelamento da autorização.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section community">
+      <div class="wrap">
+        <div class="cta-card">
+          <div>
+            <h3>Quer aprender mais antes de criar sua conta?</h3>
+            <p>
+              Entre no grupo de estratégias para coletivos da Conta Aberta. Ele foi pensado para admins, tesoureiros e lideranças que querem discutir organização, arrecadação, transparência, rotina financeira e crescimento junto de especialistas e de outros coletivos que já estão usando a plataforma.
+            </p>
+            <p>
+              É uma boa porta de entrada para quem ainda está entendendo o próprio cenário, quer trocar experiência com outros grupos e prefere amadurecer a decisão antes de criar a conta.
+            </p>
+
+            <div class="btn-row">
+              <a class="btn btn-primary" href="/grupo">Quero entrar no grupo</a>
+              <a class="btn btn-secondary" href="/cadastrar">Criar conta agora</a>
+            </div>
+          </div>
+
+          <div>
+            <div class="pill-list">
+              <span>Organização financeira</span>
+              <span>Prestação de contas</span>
+              <span>Arrecadação recorrente</span>
+              <span>Open Finance sem mistério</span>
+              <span>Casos de outros coletivos</span>
+              <span>Boas práticas para crescimento</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Esta base vai crescer com o tempo</h2>
+            <p class="section-copy">
+              O cluster já nasce com artigos, mas a ideia é abrir espaço para outros formatos e aprofundamentos sem mudar a lógica do conjunto.
+            </p>
+          </div>
+        </div>
+
+        <div class="future-grid">
+          <div class="format-card">
+            <strong>Checklists</strong>
+            <p>Materiais rápidos para abrir conta, organizar caixa, pedir apoio e prestar contas.</p>
+          </div>
+          <div class="format-card">
+            <strong>Modelos</strong>
+            <p>Exemplos de mensagens para comunidade, critérios de gasto e resumos mensais.</p>
+          </div>
+          <div class="format-card">
+            <strong>Estudos de caso</strong>
+            <p>Aprendizados de coletivos que melhoraram a visibilidade do caixa e a retenção de apoio.</p>
+          </div>
+          <div class="format-card">
+            <strong>Vídeos e FAQs</strong>
+            <p>Respostas curtas para dúvidas frequentes sobre produto, uso prático e segurança.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-grid">
+      <div>
+        <a class="brand" href="preview (indice).html" aria-label="Conta Aberta">
+          <svg viewBox="0 0 78 78" role="img" aria-hidden="true">
+            <defs>
+              <linearGradient id="logoGradientFooterIndex" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#69d5ca"></stop>
+                <stop offset="100%" stop-color="#245fae"></stop>
+              </linearGradient>
+            </defs>
+            <circle cx="39" cy="39" r="33" fill="url(#logoGradientFooterIndex)"></circle>
+            <path d="M39 12c12.7 0 23 10.3 23 23 0 6.2-2.5 11.9-6.5 16-1.8-8.1-8.4-14.2-16.5-14.2S24.3 42.9 22.5 51C18.5 46.9 16 41.2 16 35c0-12.7 10.3-23 23-23z" fill="#ffffff" opacity="0.9"></path>
+            <circle cx="39" cy="42" r="11.3" fill="#0b2b57"></circle>
+            <path d="M39 45l10.3 18H28.7z" fill="#f8c640"></path>
+          </svg>
+          <span class="brand-wordmark" style="color: #ffffff;">
+            <span>conta</span>
+            <span>aberta</span>
+          </span>
+        </a>
+        <p style="max-width: 320px; margin-top: 20px;">
+          Conteúdos para coletivos organizarem recursos, aumentarem confiança e crescerem com mais clareza.
+        </p>
+        <p style="margin-top: 18px;">© 2026 Buzzlabs Pesquisa e Desenvolvimento LTDA</p>
+      </div>
+
+      <div>
+        <h4>Navegação</h4>
+        <div class="footer-links">
+          <a href="preview (indice).html">Base de conhecimento</a>
+          <a href="/projetos">Projetos</a>
+          <a href="/contato">Contato</a>
+        </div>
+      </div>
+
+      <div>
+        <h4>Institucional</h4>
+        <div class="footer-links">
+          <a href="/quem-somos">Quem Somos</a>
+          <a href="/termos">Termos de Serviço</a>
+          <a href="/grupo">Grupo de estratégias</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
